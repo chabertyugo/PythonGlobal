@@ -1,0 +1,4 @@
+Here are the contents of the file.
+This is the 2nd line.
+And finally we finish here.
+This is the last line I just added
