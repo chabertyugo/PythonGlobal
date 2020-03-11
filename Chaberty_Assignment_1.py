@@ -25,7 +25,7 @@ print(f"{dash:^80}")
 log = "Produced on: " + now.strftime("%Y-%m-%d")
 print(f"{log:^80}")
 # We are now ready to actually start iterating through the csv file. Original name retained.
-f = open("500000 Sales Records.csv", 'rt')
+f = open("my_class_files/Week 9/500000 Sales Records.csv", 'rt')
 reader = csv.reader(f)
 # Skip the header line right away.
 next(reader)
