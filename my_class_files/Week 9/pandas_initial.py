@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as mpl
 
 # Setting panda options to format all floats from file to 2 decimal places.
 pd.options.display.float_format = '{:.2f}'.format
@@ -34,6 +35,15 @@ dataset.columns = dataset.columns.str.strip().str.lower().str.replace(' ', '_').
 #
 # print(dataset.region.values)
 
-print(dataset.groupby("region")["units_sold"].sum())
-print(dataset.groupby("region")["units_sold"].sum()["Europe"])
-print(dataset.groupby("region")["units_sold"].mean())
+# print(dataset.groupby("region")["units_sold"].sum())
+# print(dataset.groupby("region")["units_sold"].sum()["Europe"])
+# print(dataset.groupby("region")["units_sold"].mean())
+
+print(dataset.groupby("region").sum()["units_sold"])
+
+a = dataset.groupby("region").sum()["units_sold"]
+
+a.plot(kind="bar", x="region", y="units_sold")
+mpl.show()
+a.plot(kind="pie", x="region", y="units_sold")
+mpl.show()
