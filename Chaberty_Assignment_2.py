@@ -23,22 +23,5 @@ except Exception as e:
 # Formatting to remove spaces and parentheses and set all to lower case.
 df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
 
-d_country_profits = {}
-for index, row in df.iterrows():
-    current_country = row[1]
-    current_profits = row[12]
-    if not current_country in d_country_profits:
-        d_country_profits[current_country] = current_profits
-    # Otherwise we add the new revenue value to the value currently assigned to region key.
-    else:
-        # Every time we add 2 float values, we round to 2 decimal places.
-        # This ensures we never end up with a round up when it should actually round down and vice versa due to float.
-        d_region_revenue[current_region] = round(float(d_region_revenue[current_region]) + float(current_revenue), 2)
-
-
-
-# def profit_by_country(n: str):
-#     return print(df.groupby("country")["total_profits"]
-
 
 
